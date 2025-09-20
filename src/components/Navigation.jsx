@@ -11,7 +11,7 @@ import {
   FaTimes,
   FaInstagram,
 } from "react-icons/fa";
-
+import { motion } from 'framer-motion';
 const Navigation = () => {
   const [activeItem, setActiveItem] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);

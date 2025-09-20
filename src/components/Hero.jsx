@@ -8,6 +8,8 @@ import {
   FaServer,
 } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
+
 const Hero = () => {
   const [scrollIndicator, setScrollIndicator] = useState(true);
 

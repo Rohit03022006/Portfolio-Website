@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaCode, FaCloud, FaDatabase, FaTools } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 const Skills_Technologies = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const element = document.getElementById('skills');
+      const element = document.getElementById("skills");
       if (element) {
         const position = element.getBoundingClientRect();
         if (position.top < window.innerHeight - 100) {
@@ -15,162 +15,162 @@ const Skills_Technologies = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const technologies = [
     {
       name: "AWS",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-      category: "devops"
+      category: "devops",
     },
     {
       name: "Bash",
       icon: "https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg",
-      category: "devops"
+      category: "devops",
     },
     {
       name: "Bootstrap",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "C",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
-      category: "backend"
+      category: "backend",
     },
-    { 
-      name: "Chart.js", 
+    {
+      name: "Chart.js",
       icon: "https://www.chartjs.org/media/logo-title.svg",
-      category: "tools"
+      category: "tools",
     },
     {
       name: "C++",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
-      category: "backend"
+      category: "backend",
     },
     {
       name: "CSS3",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "Docker",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
-      category: "devops"
+      category: "devops",
     },
     {
       name: "Express",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
-      category: "backend"
+      category: "backend",
     },
     {
       name: "Figma",
       icon: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
-      category: "tools"
+      category: "tools",
     },
     {
       name: "Git",
       icon: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
-      category: "devops"
+      category: "devops",
     },
     {
       name: "GraphQL",
       icon: "https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg",
-      category: "backend"
+      category: "backend",
     },
     {
       name: "HTML5",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "JavaScript",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "Jenkins",
       icon: "https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg",
-      category: "devops"
+      category: "devops",
     },
     {
       name: "Jest",
       icon: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg",
-      category: "tools"
+      category: "tools",
     },
     {
       name: "Kubernetes",
       icon: "https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg",
-      category: "devops"
+      category: "devops",
     },
     {
       name: "Linux",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg",
-      category: "devops"
+      category: "devops",
     },
     {
       name: "MongoDB",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
-      category: "database"
+      category: "database",
     },
     {
       name: "MySQL",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
-      category: "database"
+      category: "database",
     },
     {
       name: "Next.js",
       icon: "https://cdn.worldvectorlogo.com/logos/nextjs-2.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "Node.js",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
-      category: "backend"
+      category: "backend",
     },
     {
       name: "Postman",
       icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
-      category: "tools"
+      category: "tools",
     },
     {
       name: "React",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "React Native",
       icon: "https://reactnative.dev/img/header_logo.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "Tailwind CSS",
       icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "TypeScript",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "Vue.js",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg",
-      category: "frontend"
+      category: "frontend",
     },
     {
       name: "Python",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
-      category: "backend"
+      category: "backend",
     },
     {
       name: "MLflow",
       icon: "https://raw.githubusercontent.com/mlflow/mlflow/refs/heads/master/assets/logo.svg",
-      category: "tools"
+      category: "tools",
     },
   ];
 
@@ -182,9 +182,9 @@ const Skills_Technologies = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -193,9 +193,9 @@ const Skills_Technologies = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   const logoVariants = {
@@ -204,9 +204,9 @@ const Skills_Technologies = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -216,9 +216,9 @@ const Skills_Technologies = () => {
     >
       <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full translate-y-32 -translate-x-32 opacity-50"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
-        <motion.h2 
+        <motion.h2
           className="text-4xl font-bold text-center mb-4 text-gray-800"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -226,8 +226,8 @@ const Skills_Technologies = () => {
         >
           Skills & Technologies
         </motion.h2>
-        
-        <motion.p 
+
+        <motion.p
           className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -236,7 +236,7 @@ const Skills_Technologies = () => {
           Technologies and tools I use to bring ideas to life
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="w-full my-12 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
@@ -261,14 +261,14 @@ const Skills_Technologies = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
           {/* Frontend */}
-          <motion.div 
+          <motion.div
             className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
             variants={itemVariants}
           >
@@ -296,7 +296,7 @@ const Skills_Technologies = () => {
           </motion.div>
 
           {/* Backend */}
-          <motion.div 
+          <motion.div
             className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
             variants={itemVariants}
             transition={{ delay: 0.1 }}
@@ -325,7 +325,7 @@ const Skills_Technologies = () => {
           </motion.div>
 
           {/* DevOps & Cloud */}
-          <motion.div 
+          <motion.div
             className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
             variants={itemVariants}
             transition={{ delay: 0.2 }}
@@ -354,7 +354,7 @@ const Skills_Technologies = () => {
           </motion.div>
 
           {/* Databases & Tools */}
-          <motion.div 
+          <motion.div
             className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
             variants={itemVariants}
             transition={{ delay: 0.3 }}
@@ -364,7 +364,10 @@ const Skills_Technologies = () => {
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {technologies
-                .filter((tech) => tech.category === "database" || tech.category === "tools")
+                .filter(
+                  (tech) =>
+                    tech.category === "database" || tech.category === "tools"
+                )
                 .map((tech, index) => (
                   <motion.div
                     key={index}
@@ -383,7 +386,7 @@ const Skills_Technologies = () => {
           </motion.div>
         </motion.div>
       </div>
-      
+
       <style jsx>{`
         @keyframes logoLoop {
           0% {

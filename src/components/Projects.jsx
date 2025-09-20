@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaTools, FaFlask, FaPython, FaExternalLinkAlt } from 'react-icons/fa';
-
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);

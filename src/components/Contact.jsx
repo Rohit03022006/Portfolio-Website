@@ -1,101 +1,108 @@
-import React, { useState } from 'react';
-import { FaLinkedin, FaGithub, FaInstagram, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
+import React, { useState } from "react";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+  FaPaperPlane,
+  FaCheckCircle,
+  FaExclamationTriangle,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Get Formspree form ID from environment variables
-  const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID || "myzdrvjo";
+  const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
-    
-    // Clear error when user starts typing
+
     if (errors[name]) {
       setErrors({
         ...errors,
-        [name]: ''
+        [name]: "",
       });
     }
   };
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required";
     }
-    
+
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Email is invalid";
     }
-    
+
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = "Message is required";
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = "Message must be at least 10 characters";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const submitForm = async (ev) => {
     ev.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _subject: `New message from ${formData.name} - Portfolio Contact Form`
-        })
-      });
-      
+      const response = await fetch(
+        `https://formspree.io/f/${FORMSPREE_FORM_ID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `New message from ${formData.name} - Portfolio Contact Form`,
+          }),
+        }
+      );
+
       if (response.ok) {
         setStatus("SUCCESS");
-        setFormData({ name: '', email: '', message: '' });
-        
-        // Reset success message after 5 seconds
+        setFormData({ name: "", email: "", message: "" });
+
         setTimeout(() => {
           setStatus("");
         }, 5000);
       } else {
-        console.error('Formspree error:', await response.text());
+        console.error("Formspree error:", await response.text());
         setStatus("ERROR");
-        
-        // Reset error message after 5 seconds
+
         setTimeout(() => {
           setStatus("");
         }, 5000);
       }
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error("Form submission error:", error);
       setStatus("ERROR");
       setTimeout(() => {
         setStatus("");
@@ -106,83 +113,113 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+    >
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full translate-y-32 -translate-x-32 opacity-50"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
           Get In Touch
         </h2>
-        
+
         <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16">
           Have a question or want to work together? Feel free to reach out!
         </p>
-        
+
         <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100">
           {status === "SUCCESS" ? (
             <div className="text-center py-8">
               <FaCheckCircle className="text-green-500 text-5xl mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Message Sent Successfully!</h3>
-              <p className="text-gray-600">Thank you for reaching out. I'll get back to you soon.</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                Message Sent Successfully!
+              </h3>
+              <p className="text-gray-600">
+                Thank you for reaching out. I'll get back to you soon.
+              </p>
             </div>
           ) : (
             <form onSubmit={submitForm}>
               <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-700 mb-2 font-medium">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
+                <label
+                  htmlFor="name"
+                  className="block text-gray-700 mb-2 font-medium"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
+                    errors.name ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="Your name"
                 />
-                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                )}
               </div>
-              
+
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 mb-2 font-medium">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
+                <label
+                  htmlFor="email"
+                  className="block text-gray-700 mb-2 font-medium"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                    errors.email ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="your.email@example.com"
                 />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
-              
+
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 mb-2 font-medium">Message</label>
-                <textarea 
-                  id="message" 
+                <label
+                  htmlFor="message"
+                  className="block text-gray-700 mb-2 font-medium"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="5" 
+                  rows="5"
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                    errors.message ? 'border-red-500' : 'border-gray-300'
+                    errors.message ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="Your message here..."
                 ></textarea>
-                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
               </div>
-              
+
               <div>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={isSubmitting}
                   className={`w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-all flex items-center justify-center ${
-                    isSubmitting ? 'opacity-75 cursor-not-allowed' : 'hover:shadow-lg'
+                    isSubmitting
+                      ? "opacity-75 cursor-not-allowed"
+                      : "hover:shadow-lg"
                   }`}
                 >
                   {isSubmitting ? (
@@ -196,21 +233,22 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-                
+
                 {status === "ERROR" && (
                   <p className="text-red-500 mt-4 flex items-center">
-                    <FaExclamationTriangle className="mr-2" /> Oops! There was an error. Please try again.
+                    <FaExclamationTriangle className="mr-2" /> Oops! There was
+                    an error. Please try again.
                   </p>
                 )}
               </div>
             </form>
           )}
-          
+
           <div className="mt-8 pt-8 border-t border-gray-200 text-center">
             <p className="text-gray-600 mb-4">Or reach out directly through:</p>
             <div className="flex justify-center space-x-6 mb-4">
-              <a 
-                href="https://www.linkedin.com/in/rohit-kumar-783127334?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3By1kjWphlRfWOP8gMoEFPOg%3D%3D" 
+              <a
+                href="https://www.linkedin.com/in/rohit-kumar-783127334?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3By1kjWphlRfWOP8gMoEFPOg%3D%3D"
                 className="text-blue-600 hover:text-blue-800 text-2xl transition-colors hover:scale-110"
                 aria-label="LinkedIn"
                 target="_blank"
@@ -218,8 +256,8 @@ const Contact = () => {
               >
                 <FaLinkedin />
               </a>
-              <a 
-                href="https://github.com/Rohit03022006" 
+              <a
+                href="https://github.com/Rohit03022006"
                 className="text-gray-800 hover:text-black text-2xl transition-colors hover:scale-110"
                 aria-label="GitHub"
                 target="_blank"
@@ -227,8 +265,8 @@ const Contact = () => {
               >
                 <FaGithub />
               </a>
-              <a 
-                href="https://instagram.com/_rohit_xten" 
+              <a
+                href="https://instagram.com/_rohit_xten"
                 className="text-pink-600 hover:text-pink-800 text-2xl transition-colors hover:scale-110"
                 aria-label="Instagram"
                 target="_blank"
@@ -238,7 +276,13 @@ const Contact = () => {
               </a>
             </div>
             <p className="mt-4 text-gray-600">
-              Email: <a href="mailto:kumarrohit67476@gmail.com" className="text-indigo-600 hover:underline font-medium">kumarrohit67476@gmail.com</a>
+              Email:{" "}
+              <a
+                href="mailto:kumarrohit67476@gmail.com"
+                className="text-indigo-600 hover:underline font-medium"
+              >
+                kumarrohit67476@gmail.com
+              </a>
             </p>
           </div>
         </div>
