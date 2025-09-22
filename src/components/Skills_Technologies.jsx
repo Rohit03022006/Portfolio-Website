@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaCode, FaCloud, FaDatabase, FaTools } from "react-icons/fa";
 import { motion } from "framer-motion";
+
 const Skills_Technologies = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -212,14 +213,13 @@ const Skills_Technologies = () => {
   return (
     <section
       id="skills"
-      className="skills-technologies py-10 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+      className="skills-technologies py-10 bg-gradient-to-b from-cream to-cream-light relative overflow-hidden"
     >
-      <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full translate-y-32 -translate-x-32 opacity-50"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[#F5E6CC]"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2
-          className="text-4xl font-bold text-center mb-4 text-gray-800"
+          className="text-4xl font-bold text-center mb-1 text-black"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
@@ -228,7 +228,7 @@ const Skills_Technologies = () => {
         </motion.h2>
 
         <motion.p
-          className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16"
+          className="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -247,13 +247,13 @@ const Skills_Technologies = () => {
               <motion.div
                 key={index}
                 className="mx-6 flex items-center justify-center"
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400 }}
               >
                 <img
                   src={tech.icon}
                   alt={tech.name}
-                  className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+                  className="w-16 h-16 object-contain filter transition-all duration-300 ease-in-out"
                   title={tech.name}
                 />
               </motion.div>
@@ -269,11 +269,11 @@ const Skills_Technologies = () => {
         >
           {/* Frontend */}
           <motion.div
-            className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
+            className="bg-cream p-6 rounded-xl shadow-lg border border-[#F5E6CC] hover:shadow-xl transition-shadow"
             variants={itemVariants}
           >
-            <h3 className="text-xl font-semibold mb-4 text-indigo-600 flex items-center">
-              <FaCode className="mr-2 text-indigo-500" /> Frontend
+            <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+              <FaCode className="mr-2 text-red-500" /> Frontend
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {technologies
@@ -281,7 +281,7 @@ const Skills_Technologies = () => {
                 .map((tech, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-indigo-50 hover:-translate-y-1 hover:shadow-md"
+                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-red-50 hover:-translate-y-1 hover:shadow-md"
                     whileHover={{ scale: 1.05 }}
                   >
                     <img
@@ -289,7 +289,7 @@ const Skills_Technologies = () => {
                       alt={tech.name}
                       className="w-6 h-6 mr-2"
                     />
-                    <span className="text-sm">{tech.name}</span>
+                    <span className="text-sm text-black">{tech.name}</span>
                   </motion.div>
                 ))}
             </div>
@@ -297,12 +297,12 @@ const Skills_Technologies = () => {
 
           {/* Backend */}
           <motion.div
-            className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
+            className="bg-cream p-6 rounded-xl shadow-lg border border-[#F5E6CC] hover:shadow-xl transition-shadow"
             variants={itemVariants}
             transition={{ delay: 0.1 }}
           >
-            <h3 className="text-xl font-semibold mb-4 text-indigo-600 flex items-center">
-              <FaCloud className="mr-2 text-indigo-500" /> Backend
+            <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+              <FaCloud className="mr-2 text-red-500" /> Backend
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {technologies
@@ -310,7 +310,7 @@ const Skills_Technologies = () => {
                 .map((tech, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-indigo-50 hover:-translate-y-1 hover:shadow-md"
+                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-red-50 hover:-translate-y-1 hover:shadow-md"
                     whileHover={{ scale: 1.05 }}
                   >
                     <img
@@ -318,7 +318,7 @@ const Skills_Technologies = () => {
                       alt={tech.name}
                       className="w-6 h-6 mr-2"
                     />
-                    <span className="text-sm">{tech.name}</span>
+                    <span className="text-sm text-black">{tech.name}</span>
                   </motion.div>
                 ))}
             </div>
@@ -326,12 +326,12 @@ const Skills_Technologies = () => {
 
           {/* DevOps & Cloud */}
           <motion.div
-            className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
+            className="bg-cream p-6 rounded-xl shadow-lg border border-[#F5E6CC] hover:shadow-xl transition-shadow"
             variants={itemVariants}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-xl font-semibold mb-4 text-indigo-600 flex items-center">
-              <FaTools className="mr-2 text-indigo-500" /> DevOps & Cloud
+            <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+              <FaTools className="mr-2 text-red-500" /> DevOps & Cloud
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {technologies
@@ -339,7 +339,7 @@ const Skills_Technologies = () => {
                 .map((tech, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-indigo-50 hover:-translate-y-1 hover:shadow-md"
+                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-red-50 hover:-translate-y-1 hover:shadow-md"
                     whileHover={{ scale: 1.05 }}
                   >
                     <img
@@ -347,7 +347,7 @@ const Skills_Technologies = () => {
                       alt={tech.name}
                       className="w-6 h-6 mr-2"
                     />
-                    <span className="text-sm">{tech.name}</span>
+                    <span className="text-sm text-black">{tech.name}</span>
                   </motion.div>
                 ))}
             </div>
@@ -355,12 +355,12 @@ const Skills_Technologies = () => {
 
           {/* Databases & Tools */}
           <motion.div
-            className="bg-white p-6 rounded-xl shadow-lg border border-indigo-100 hover:shadow-xl transition-shadow"
+            className="bg-cream p-6 rounded-xl shadow-lg border border-[#F5E6CC] hover:shadow-xl transition-shadow"
             variants={itemVariants}
             transition={{ delay: 0.3 }}
           >
-            <h3 className="text-xl font-semibold mb-4 text-indigo-600 flex items-center">
-              <FaDatabase className="mr-2 text-indigo-500" /> Databases & Tools
+            <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+              <FaDatabase className="mr-2 text-red-500" /> Databases & Tools
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {technologies
@@ -371,7 +371,7 @@ const Skills_Technologies = () => {
                 .map((tech, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-indigo-50 hover:-translate-y-1 hover:shadow-md"
+                    className="bg-white p-3 rounded-lg shadow-sm flex items-center transition-all duration-300 ease-in-out hover:bg-red-50 hover:-translate-y-1 hover:shadow-md"
                     whileHover={{ scale: 1.05 }}
                   >
                     <img
@@ -379,7 +379,7 @@ const Skills_Technologies = () => {
                       alt={tech.name}
                       className="w-6 h-6 mr-2"
                     />
-                    <span className="text-sm">{tech.name}</span>
+                    <span className="text-sm text-black">{tech.name}</span>
                   </motion.div>
                 ))}
             </div>

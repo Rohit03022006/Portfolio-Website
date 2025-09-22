@@ -23,7 +23,7 @@ const Projects = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check on initial load
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -99,7 +99,6 @@ const Projects = () => {
     },
   ];
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -164,16 +163,12 @@ const Projects = () => {
   };
 
   return (
-    <section
-      id="projects"
-      className="py-10 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
-    >
-      <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full translate-y-32 -translate-x-32 opacity-50"></div>
+    <section id="projects" className="py-10 relative overflow-hidden">
+     <div className="absolute inset-0 -z-10 h-full w-full bg-[#F5E6CC]"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2
-          className="text-4xl font-bold text-center mb-4 text-gray-800"
+          className="text-4xl font-bold text-center mb-4 text-black"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
@@ -182,7 +177,7 @@ const Projects = () => {
         </motion.h2>
 
         <motion.p
-          className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16"
+          className="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -202,7 +197,7 @@ const Projects = () => {
             return (
               <motion.div
                 key={project.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                className="bg-cream rounded-xl shadow-lg overflow-hidden border border-[#F5E6CC] hover:shadow-xl transition-shadow duration-300 group"
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
@@ -226,7 +221,7 @@ const Projects = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
+                        className="bg-white p-3 rounded-full shadow-lg hover:bg-red-50 transition-colors"
                         aria-label="View code on GitHub"
                       >
                         <FaGithub size={20} />

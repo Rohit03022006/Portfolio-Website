@@ -115,38 +115,36 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+      className="py-10 relative overflow-hidden"
     >
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full translate-y-32 -translate-x-32 opacity-50"></div>
+       <div className="absolute inset-0 -z-10 h-full w-full bg-[#F5E6CC]"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
+        <h2 className="text-4xl font-bold text-center mb-4 text-black">
           Get In Touch
         </h2>
 
-        <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16">
+        <p className="text-lg text-[#666666] text-center max-w-2xl mx-auto mb-10">
           Have a question or want to work together? Feel free to reach out!
         </p>
 
-        <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+        <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg border border-[#F5E6CC]">
           {status === "SUCCESS" ? (
             <div className="text-center py-8">
               <FaCheckCircle className="text-green-500 text-5xl mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-xl font-semibold mb-2 text-black">
                 Message Sent Successfully!
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#666666]">
                 Thank you for reaching out. I'll get back to you soon.
               </p>
             </div>
           ) : (
-            <form onSubmit={submitForm}>
-              <div className="mb-6">
+            <form onSubmit={submitForm} noValidate>
+              <div className="mb-5">
                 <label
                   htmlFor="name"
-                  className="block text-gray-700 mb-2 font-medium"
+                  className="block text-black mb-2 font-medium "
                 >
                   Name
                 </label>
@@ -156,8 +154,8 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                    errors.name ? "border-red-500" : "border-gray-300"
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] transition-colors ${
+                    errors.name ? "border-red-500" : "border-[#F5E6CC]"
                   }`}
                   placeholder="Your name"
                 />
@@ -169,7 +167,7 @@ const Contact = () => {
               <div className="mb-6">
                 <label
                   htmlFor="email"
-                  className="block text-gray-700 mb-2 font-medium"
+                  className="block text-black mb-2 font-medium"
                 >
                   Email
                 </label>
@@ -179,8 +177,8 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                    errors.email ? "border-red-500" : "border-gray-300"
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] transition-colors ${
+                    errors.email ? "border-red-500" : "border-[#F5E6CC]"
                   }`}
                   placeholder="your.email@example.com"
                 />
@@ -192,7 +190,7 @@ const Contact = () => {
               <div className="mb-6">
                 <label
                   htmlFor="message"
-                  className="block text-gray-700 mb-2 font-medium"
+                  className="block text-black mb-2 font-medium"
                 >
                   Message
                 </label>
@@ -202,8 +200,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                    errors.message ? "border-red-500" : "border-gray-300"
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] transition-colors ${
+                    errors.message ? "border-red-500" : "border-[#F5E6CC]"
                   }`}
                   placeholder="Your message here..."
                 ></textarea>
@@ -216,7 +214,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-all flex items-center justify-center ${
+                  className={`w-full bg-[#DC2626] text-white py-3 rounded-lg hover:bg-[#B91C1C] transition-all flex items-center justify-center ${
                     isSubmitting
                       ? "opacity-75 cursor-not-allowed"
                       : "hover:shadow-lg"
@@ -244,12 +242,12 @@ const Contact = () => {
             </form>
           )}
 
-          <div className="mt-8 pt-8 border-t border-gray-200 text-center">
-            <p className="text-gray-600 mb-4">Or reach out directly through:</p>
+          <div className="mt-8 pt-8 border-t border-[#F5E6CC] text-center">
+            <p className="text-[#666666] mb-4">Or reach out directly through:</p>
             <div className="flex justify-center space-x-6 mb-4">
               <a
                 href="https://www.linkedin.com/in/rohit-kumar-783127334?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3By1kjWphlRfWOP8gMoEFPOg%3D%3D"
-                className="text-blue-600 hover:text-blue-800 text-2xl transition-colors hover:scale-110"
+                className="text-[#0077B5] hover:text-[#005582] text-2xl transition-colors hover:scale-110"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -258,7 +256,7 @@ const Contact = () => {
               </a>
               <a
                 href="https://github.com/Rohit03022006"
-                className="text-gray-800 hover:text-black text-2xl transition-colors hover:scale-110"
+                className="text-black hover:text-[#333333] text-2xl transition-colors hover:scale-110"
                 aria-label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -267,7 +265,7 @@ const Contact = () => {
               </a>
               <a
                 href="https://instagram.com/_rohit_xten"
-                className="text-pink-600 hover:text-pink-800 text-2xl transition-colors hover:scale-110"
+                className="text-[#E1306C] hover:text-[#C13584] text-2xl transition-colors hover:scale-110"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -275,11 +273,11 @@ const Contact = () => {
                 <FaInstagram />
               </a>
             </div>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-[#666666]">
               Email:{" "}
               <a
                 href="mailto:kumarrohit67476@gmail.com"
-                className="text-indigo-600 hover:underline font-medium"
+                className="text-[#DC2626] hover:underline font-medium"
               >
                 kumarrohit67476@gmail.com
               </a>
