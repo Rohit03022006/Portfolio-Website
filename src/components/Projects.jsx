@@ -23,6 +23,7 @@ import {
   FaTimes,
   FaAws,
 } from "react-icons/fa";
+import { SiDocker, SiKubernetes } from "react-icons/si";
 import { motion } from "framer-motion";
 import { data, tr } from "framer-motion/client";
 
@@ -94,31 +95,43 @@ const Projects = () => {
       ],
       category: "fullstack",
       featured: true,
-      techIcons: [FaCode, FaDatabase, FaTools],
+      techIcons: [FaCode, FaDatabase, FaTools, SiDocker],
       status: "completed",
     },
     {
       id: 2,
-      title: "PESTEND - a IOT and AI-based Pest Control System",
+      title: "Load Balancing Simulator",
       description:
-        "Protect Your Crops with AI featuring real-time updates and machine learning.",
-      image: null,
-      githubUrl: "https://github.com/Rohit03022006/PESTEND",
+        "An interactive load balancing simulator designed to visualize traffic distribution algorithms and server performance in real time.",
+      image:
+        "https://raw.githubusercontent.com/Rohit03022006/load-balancing-simulator/main/screenshot/Home.png",
+      githubUrl: "https://github.com/Rohit03022006/load-balancing-simulator",
       liveUrl: null,
       tags: [
         "React",
-        "Flask",
-        "MongoDB",
-        "IOT",
+        "Node.js",
+        "Express",
+        "Simulation",
         "REST API",
-        "Machine Learning",
-        "Firebase",
-        "AWS",
+        "Docker",
+        "K8S",
         "CI/CD",
       ],
       category: "fullstack",
       featured: true,
-      techIcons: [FaCode, FaServer, FaDatabase],
+      techIcons: [FaCode, FaServer, FaDatabase, FaTools, SiDocker, SiKubernetes],
+      features: [
+        "Simulation of multiple load balancing algorithms",
+        "Real-time visualization of traffic distribution",
+        "Dynamic server allocation and request handling",
+        "Performance monitoring with response time metrics",
+        "Interactive dashboard built using React",
+        "RESTful backend services with Node.js and Express",
+        "Containerized deployment using Docker",
+        "Kubernetes-based orchestration and scaling",
+        "Automated CI/CD workflow integration",
+        "Responsive and modern user interface",
+      ],
       status: "completed",
     },
     {
@@ -139,7 +152,7 @@ const Projects = () => {
         "Dockerized for easy deployment",
         "CI/CD pipeline for automated testing and deployment",
       ],
-      techIcons: [FaServer, FaDatabase, FaAws],
+      techIcons: [FaServer, FaDatabase, FaAws, SiDocker],
       status: "in-progress",
     },
     {

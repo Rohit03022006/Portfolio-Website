@@ -137,7 +137,6 @@ const Hero = () => {
               <Typewriter
                 words={[
                   "Full Stack Applications",
-                  "Scalable Backend Systems",
                   "DevOps Pipelines",
                   "Cloud Solutions",
                 ]}
@@ -283,8 +282,8 @@ const Hero = () => {
           >
             <div className="relative">
               <motion.div
-                className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded overflow-hidden shadow-2xl border-3"
-                whileHover={{ scale: 1.02 }}                
+                className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border-1"
+                whileHover={{ scale: 1.00 }}                
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/10 to-transparent z-10"></div>
                 <img

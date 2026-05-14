@@ -62,11 +62,6 @@ const Skills_Technologies = () => {
       category: "backend",
     },
     {
-      name: "Figma",
-      icon: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
-      category: "tools",
-    },
-    {
       name: "Git",
       icon: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
       category: "devops",
@@ -184,7 +179,7 @@ const Skills_Technologies = () => {
     },
     {
       name: "SonarQube",
-      icon: "https://assets-eu-01.kc-usercontent.com:443/55017e37-262d-017b-afd6-daa9468cbc30/8e59bcad-6e39-41dc-abd9-a0e251e8d63f/Sonar%20%282%29.svg?w=128&h=32&fit=crop&q=80",
+      icon: "https://cdn.worldvectorlogo.com/logos/sonarqube-1.svg",
       category: "tools",
     },
     {

@@ -231,6 +231,9 @@ const About = () => {
                     <span className="text-sm font-medium text-[#DC2626] bg-[#FEE2E2] px-3 py-1 rounded-full">
                       2024 - 2028
                     </span>
+                    <span className="text-sm font-medium text-[#089113] bg-[#FEE2E2] px-3 py-1 rounded-full">
+                      7.7 CGPA
+                    </span>
                     <span className="text-sm text-[#666666]">New Delhi, India</span>
                   </div>
                 </div>
@@ -350,8 +353,7 @@ const About = () => {
                   {
                     name: "Complete DevOps Course",
                     provider: "GeeksforGeeks",
-                    status: "ongoing",
-                    link: null
+                    link: "https://www.geeksforgeeks.org/certificate/8a5a3b81b0cb4831b30f070311e63a94?utm_source=socials&utm_medium=cc_link"
                   },
                   {
                     name: "Github",
