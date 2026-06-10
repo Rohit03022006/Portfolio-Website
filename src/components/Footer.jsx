@@ -35,7 +35,7 @@ const Footer = () => {
     },
     {
       icon: <FaLinkedin size={20} />,
-      href: "https://www.linkedin.com/in/rohit-kumar-783127334",
+      href: "https://www.linkedin.com/in/rohitxten",
       label: "LinkedIn",
       color: "hover:bg-[#0077B5]"
     },
