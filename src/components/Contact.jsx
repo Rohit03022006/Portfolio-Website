@@ -243,7 +243,7 @@ const Contact = () => {
               <div className="flex gap-4">
                               {[
                                 { icon: FaGithub, href: "https://github.com/Rohit03022006", color: "bg-gray-900", label: "GitHub" },
-                                { icon: FaLinkedin, href: "https://www.linkedin.com/in/rohit-kumar-783127334", color: "bg-[#0077B5]", label: "LinkedIn" },
+                                { icon: FaLinkedin, href: "https://www.linkedin.com/in/rohitxten", color: "bg-[#0077B5]", label: "LinkedIn" },
                                 { icon: FaInstagram, href: "https://instagram.com/_rohit_xten", color: "bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF]", label: "Instagram" },
                               ].map((social, index) => (
                                 <motion.a
