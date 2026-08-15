@@ -86,7 +86,6 @@ const Footer = () => {
               <h3 className="text-3xl font-bold mb-3">
                 <span className="text-white">Ro</span>
                 <span className="text-[#DC2626]">hit</span>
-                <span className="text-white"> Kumar</span>
               </h3>
               <p className="text-[#CCCCCC] mb-4 max-w-md leading-relaxed">
                 Passionate Full Stack Developer & DevOps Engineer crafting innovative solutions 
@@ -210,7 +209,7 @@ const Footer = () => {
             transition={{ delay: 0.6 }}
           >
             <p className="text-[#CCCCCC] text-center md:text-left">
-              © {currentYear} <span className="text-[#DC2626] font-medium">Rohit Kumar</span>. All rights reserved.
+              © {currentYear} <span className="text-[#DC2626] font-medium">Rohit</span>. All rights reserved.
             </p>
             <p className="text-sm text-[#999999] mt-2 text-center md:text-left">
               Last updated: {lastUpdated}

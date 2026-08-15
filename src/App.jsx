@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills_Technologies from './components/Skills_Technologies';
+import GitHubShowcase from './components/GitHubShowcase';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -25,7 +26,7 @@ const App = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'github', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       // Calculate scroll progress
@@ -110,7 +111,7 @@ const App = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            Rohit Kumar
+            Rohit
           </motion.h2>
           
           <motion.p 

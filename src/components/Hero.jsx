@@ -118,14 +118,7 @@ const Hero = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-4 leading-tight"
             variants={itemVariants}
           >
-            Rohit{" "}
-            <motion.span
-              className="text-[#DC2626] relative"
-              
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Kumar
-            </motion.span>
+            <span className="text-[#DC2626]">Rohit</span>
           </motion.h1>
 
           <motion.h2

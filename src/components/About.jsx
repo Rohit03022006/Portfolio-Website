@@ -125,7 +125,7 @@ const About = () => {
               {/* Social Links Section - Moved outside the grid */}
               <div className="mt-8 pt-6 border-t border-[#F5E6CC]">
                 <h4 className="text-xl font-bold text-black mb-6">Connect With Me</h4>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
                     <div className="bg-[#0A66C2] w-10 h-10 rounded-lg flex items-center justify-center">
                       <FaLinkedin className="text-[#fdfeff] text-3xl" />
@@ -203,15 +203,14 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#F5E6CC] hover:shadow-2xl transition-all duration-300 h-full">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-[#DBEAFE] rounded-xl flex items-center justify-center mr-4">
-                  <img src="/VIPS_Logo.png" alt="VIPS_Logo" className="w-16 h-16" />
+              <div className="flex items-center justify-between gap-3 mb-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#DBEAFE] rounded-xl flex items-center justify-center shrink-0">
+                  <img src="/VIPS_Logo.png" alt="VIPS_Logo" className="w-12 h-12 sm:w-16 sm:h-16" />
                 </div>
-                <h3 className="text-2xl font-bold text-black ml-auto">Education</h3>
-                <div className="ml-auto w-16 h-16 flex items-center justify-center">
-                  <img src="/GGSIPU_Logo.png" alt="GGSIPU_Logo" className="w-16 h-16" />
+                <h3 className="text-xl sm:text-2xl font-bold text-black text-center flex-1">Education</h3>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shrink-0">
+                  <img src="/GGSIPU_Logo.png" alt="GGSIPU_Logo" className="w-12 h-12 sm:w-16 sm:h-16" />
                 </div>
-
               </div>
 
               <div className="space-y-6">
@@ -227,11 +226,11 @@ const About = () => {
                   >
                     Vivekananda Institute of Professional Studies
                   </a>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-[#DC2626] bg-[#FEE2E2] px-3 py-1 rounded-full">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-sm font-medium text-[#DC2626] bg-[#FEE2E2] px-3 py-1 rounded-full w-fit">
                       2024 - 2028
                     </span>
-                    <span className="text-sm font-medium text-[#089113] bg-[#FEE2E2] px-3 py-1 rounded-full">
+                    <span className="text-sm font-medium text-[#089113] bg-[#FEE2E2] px-3 py-1 rounded-full w-fit">
                       7.7 CGPA
                     </span>
                     <span className="text-sm text-[#666666]">New Delhi, India</span>
